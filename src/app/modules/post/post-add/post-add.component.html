@@ -1,0 +1,23 @@
+<h1 matDialogTitle>Add Post</h1>
+<mat-dialog-content align="center">
+    <form class="row" name="form" [formGroup]="form" (ngSubmit)="save()">
+        <div class="col-md-6">
+            <mat-form-field appearance="outline">
+                <mat-label>Title</mat-label>
+                <input formControlName="title" name="title" type="text" 
+                    matInput placeholder="Title" required>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <input formControlName="description" name="description" type="text" 
+                    matInput placeholder="Description" required>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" (click)="save()">Confirm</button>
+    <button mat-raised-button color="warn" (click)="dialogRef.close(false)">Cancel</button>
+</mat-dialog-actions>
