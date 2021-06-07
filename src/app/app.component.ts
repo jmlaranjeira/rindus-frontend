@@ -43,7 +43,9 @@ export class AppComponent implements OnInit{
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this._postService.post(result.data).subscribe( response => { if(response) this.postList.push(result.data) });
+      if(result) {
+        this._postService.post(result.data).subscribe( response => { if(response) this.postList.push(result.data) });
+      }
     });
   }
 
